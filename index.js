@@ -25,10 +25,7 @@ module.exports = {
             var s152 = '<link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/icon-152x152.png">';
             var s167 = '<link rel="apple-touch-icon" sizes="167x167" href="assets/favicons/icon-167x167.png">';
             var s180 = '<link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/icon-180x180.png">';
-            if ( config.FAVICON_MARKER === true ) {
-                var marker = '<!--favicon!-->';
-                return [marker,s32, s60, s76, s120, s152, s167, s180,marker].join('\n');
-            } else {
+            if ( config.APP.favicons !== false ) {
                 return [s32, s60, s76, s120, s152, s167, s180].join('\n');
             }
         }
