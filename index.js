@@ -7,10 +7,10 @@ module.exports = {
 
     included: function(app) {
           this._super.included(app);
+          app.import('vendor/assets/manifest.json', { destDir: '' });
           app.import('vendor/assets/favicon-32x32.png', { destDir: 'assets/favicons' });
           app.import('vendor/assets/favicon-96x96.png', { destDir: 'assets/favicons' });
           app.import('vendor/assets/favicon-16x16.png', { destDir: 'assets/favicons' });
-          app.import('vendor/assets/manifest.json', { destDir: 'assets/favicons' });
           app.import('vendor/assets/apple-icon-57x57.png', { destDir: 'assets/favicons' });
           app.import('vendor/assets/apple-icon-60x60.png', { destDir: 'assets/favicons' });
           app.import('vendor/assets/apple-icon-72x72.png', { destDir: 'assets/favicons' });
@@ -26,10 +26,10 @@ module.exports = {
 
     contentFor: function(type, config) {
         if ( type === 'head-footer' ) {
+            var manifest = '<link rel="manifest" href="manifest.json">';
             var s32 = '<link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">';
             var s96 = '<link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png">';
             var s16 = '<link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">';
-            var manifest = '<link rel="manifest" href="assets/favicons/manifest.json">';
             var a57 = '<link rel="icon" type="image/png" sizes="57x57" href="assets/favicons/apple-icon-57x57.png">';
             var a60 = '<link rel="icon" type="image/png" sizes="60x60" href="assets/favicons/apple-icon-60x60.png">';
             var a72 = '<link rel="icon" type="image/png" sizes="72x72" href="assets/favicons/apple-icon-72x72.png">';
